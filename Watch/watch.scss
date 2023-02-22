@@ -1,0 +1,59 @@
+$sizeWatch:400px;
+$colorWatch:rgb(254, 203, 0);
+$innerRadius:0.9 * $sizeWatch / 2;
+$dashW:$sizeWatch * 0.03;
+
+@mixin center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+@mixin round {
+    border-radius: 100%;
+}
+@mixin box ($w, $h, $bgc ) {
+    width: $w;
+    height: $h;
+    background-color: $bgc;
+}
+
+body{
+    background-color: #224;
+}
+
+.watch{
+
+    @include box ($sizeWatch, $sizeWatch, $colorWatch );    
+    @include center;
+    @include round;
+
+    .screen {
+        @include box($sizeWatch * 0.9, $sizeWatch * 0.9, darken($colorWatch, 20%));
+        @include center;
+        @include round;
+
+        .dash{
+            @include box($sizeWatch * 0.03, $sizeWatch * 0.005, $colorWatch);          
+            @include center;
+            margin-right: $sizeWatch * 0.03;
+            transform-origin: - $innerRadius + $dashW * 2  0;
+
+            @for $n from 1 through 60 {
+                &:nth-child(#{$n}){
+                    transform: rotate( ($n - 1) * 6deg );
+
+                    @if ($n - 1) % 5 == 0{
+                        background-color: red;
+                    }
+                }
+            }
+            
+        }
+
+    }
+
+}
