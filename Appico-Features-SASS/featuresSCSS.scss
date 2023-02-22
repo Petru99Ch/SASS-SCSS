@@ -1,0 +1,167 @@
+// Settings
+$colorBGC: #f7f7f7;
+$size:100px;
+$textColor1:#444;
+$textColor2:#777;
+$borderColor:#eee;
+$borderColorB:blue;
+
+// mixin
+@mixin borderL {
+            border-top: $size *0.02 solid $borderColor;
+            border-left: $size *0.02 solid $borderColor;
+            border-bottom: $size *0.02 solid $borderColor;
+            border-right: none;
+            transition: 0.5s;
+}
+@mixin borderR {
+    border-top: $size *0.02 solid $borderColor;
+    border-left: $size *0.02 solid $borderColor;
+    border-bottom: $size *0.02 solid $borderColor;
+    border-left: none;
+    transition: 0.5s;
+}
+
+// code
+.features {
+    background-color:$colorBGC;
+    margin: $size 0;
+    padding-bottom: $size * 0.8;
+    font-family: 'Poppins', sans-serif;
+
+    header{
+        text-align: center;
+        padding-top: $size * 0.8;
+        padding-bottom: $size * 0.5;
+    }
+    .container{
+        width: $size * 11.4;
+        margin: 0 auto;
+
+        img {
+            width:27%;
+            margin: 0 2%;   
+            animation: image 2s infinite linear ; 
+        }
+
+        li {
+            margin-bottom: $size * 0.3;
+            padding: 0 $size * 0.3 0px $size * 0.3;
+        }
+        h3 {
+            font-size: $size * 0.18;
+            font-weight: 700;
+            color: $textColor1;
+            margin: 0 0 $size * 0.2 0;
+            
+        }
+
+        p {
+            color: $textColor2;
+            line-height: 1.5;
+            padding: $size * 0.2 0;
+            border: $size *0.02 solid $borderColor;
+        }
+        ul:first-child li svg {
+            transition: 0.5s;
+        }
+
+        ul:first-child p{
+            @include borderL;
+        }
+        ul:first-child .icon {
+            transform: translateX($size * 0.45) translateY(-$size* 1.77);
+            float: right;
+            transition: 0.5s;
+            
+            
+        }
+        ul:last-child .icon{
+            transform: translateX(-$size *0.46) translateY(-$size * 1.76);
+            float: left;
+        }
+        ul:last-child p{
+            @include borderR;
+        }
+        .icon {
+            width: $size * 0.45;
+            height: $size * 0.45;
+            background-color: $colorBGC;
+            text-align: center;
+            line-height: $size * 0.65;
+            border-radius: $size * 0.45;
+            background-color: $colorBGC;
+            border: $size * 0.01 solid $borderColor;
+        }
+
+        ul li:hover p{
+            border-color: $borderColorB;
+        }
+        ul li:hover .icon {
+            background-color: $borderColorB;
+            border-color: $borderColorB;
+            
+        }
+        ul li:hover svg{
+            fill: white;
+        }
+        ul li .invisible {
+            width: 100%;
+            background-color: $colorBGC;
+            color: $colorBGC;
+            transform: translateY(-3px);
+            transition: 0.75s;
+        }
+        ul:first-child li:hover .invisible {
+            margin-left: 60%;
+        
+        }
+        ul:last-child li:hover .invisible {
+            margin-left: -10%;
+            width: 40%;
+           }
+    }
+
+    .row ul:first-child h3{
+        margin-right: $size * 0.1;
+    }
+    .row ul:last-child h3{
+        margin-left: $size * 0.1;
+    }
+
+    .row .container>*{
+        width: 30%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    header h1 {
+        font-weight: 700;
+        font-size: $size * 0.3;
+        color: $textColor1;
+        padding: $size * 0.1;
+       }
+
+    header h2 {
+        color: $textColor2;
+    }
+    .row ul:first-child{
+        text-align: right;
+    }
+}
+
+// animation
+@keyframes image {
+    0% {
+        
+        transform: translateY(-$size * 0.2);
+    }
+    50% {
+        
+        transform: translateY(-$size *0.1);
+    }
+    100% {
+        
+        transform: translateY(-$size *0.2);
+    }
+}

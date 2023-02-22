@@ -1,0 +1,131 @@
+.features {
+  background-color: #f7f7f7;
+  margin: 100px 0;
+  padding-bottom: 80px;
+  font-family: "Poppins", sans-serif;
+}
+.features header {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+.features .container {
+  width: 1140px;
+  margin: 0 auto;
+}
+.features .container img {
+  width: 27%;
+  margin: 0 2%;
+  animation: image 2s infinite linear;
+}
+.features .container li {
+  margin-bottom: 30px;
+  padding: 0 30px 0px 30px;
+}
+.features .container h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #444;
+  margin: 0 0 20px 0;
+}
+.features .container p {
+  color: #777;
+  line-height: 1.5;
+  padding: 20px 0;
+  border: 2px solid #eee;
+}
+.features .container ul:first-child li svg {
+  transition: 0.5s;
+}
+.features .container ul:first-child p {
+  border-top: 2px solid #eee;
+  border-left: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+  border-right: none;
+  transition: 0.5s;
+}
+.features .container ul:first-child .icon {
+  transform: translateX(45px) translateY(-177px);
+  float: right;
+  transition: 0.5s;
+}
+.features .container ul:last-child .icon {
+  transform: translateX(-46px) translateY(-176px);
+  float: left;
+}
+.features .container ul:last-child p {
+  border-top: 2px solid #eee;
+  border-left: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+  border-left: none;
+  transition: 0.5s;
+}
+.features .container .icon {
+  width: 45px;
+  height: 45px;
+  background-color: #f7f7f7;
+  text-align: center;
+  line-height: 65px;
+  border-radius: 45px;
+  background-color: #f7f7f7;
+  border: 1px solid #eee;
+}
+.features .container ul li:hover p {
+  border-color: blue;
+}
+.features .container ul li:hover .icon {
+  background-color: blue;
+  border-color: blue;
+}
+.features .container ul li:hover svg {
+  fill: white;
+}
+.features .container ul li .invisible {
+  width: 100%;
+  background-color: #f7f7f7;
+  color: #f7f7f7;
+  transform: translateY(-3px);
+  transition: 0.75s;
+}
+.features .container ul:first-child li:hover .invisible {
+  margin-left: 60%;
+}
+.features .container ul:last-child li:hover .invisible {
+  margin-left: -10%;
+  width: 40%;
+}
+.features .row ul:first-child h3 {
+  margin-right: 10px;
+}
+.features .row ul:last-child h3 {
+  margin-left: 10px;
+}
+.features .row .container > * {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+}
+.features header h1 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #444;
+  padding: 10px;
+}
+.features header h2 {
+  color: #777;
+}
+.features .row ul:first-child {
+  text-align: right;
+}
+
+@keyframes image {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}/*# sourceMappingURL=featuresSCSS.css.map */
